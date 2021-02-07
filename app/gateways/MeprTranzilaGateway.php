@@ -7,7 +7,7 @@ class MeprTranzilaGateway extends MeprBaseRealGateway
     /** Used in the view to identify the gateway */
     public function __construct() {
         $this->name = __("Tranzila Payment Page", 'memberpress');
-        $this->has_spc_form = true;
+        $this->has_spc_form = false;
         $this->set_defaults();
 
         // Setup the notification actions for this gateway
@@ -229,6 +229,7 @@ class MeprTranzilaGateway extends MeprBaseRealGateway
     public function process_signup_form($txn)
     {
         // TODO: Implement process_signup_form() method.
+        $mepr_options = MeprOptions::fetch();
     }
     private function send_handshake_request($args, $method = 'post', $blocking = true) {
         $mepr_options = MeprOptions::fetch();
