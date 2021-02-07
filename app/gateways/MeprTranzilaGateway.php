@@ -635,5 +635,12 @@ class MeprTranzilaGateway extends MeprBaseRealGateway
         MeprUtils::wp_redirect(MeprUtils::get_permalink($this->settings->failure_page_id));
 
     }
+
+    /**
+     * Returs the payment form and required fields for the gateway
+     */
+    public function spc_payment_fields() {
+        return $this->settings->desc;
+    }
 }
 
